@@ -4,6 +4,8 @@ export interface ICoinScheduleResponse {
     status: number;
     errors?: any[];
     output?: any;
+    method: string;
+    filters: any;
 }
 
 export interface ICoinScheduleDetailsParams {
@@ -26,6 +28,31 @@ export interface ICoinScheduleFilter {
      * Array of plat filters
      */
     plat: string[];
+}
+
+export interface ICoinScheduleIco {
+    EventID: string;
+    EventName: string;
+    EventStartDate: string;
+    EventEndDate: string;
+    ProjSymbol: string;
+    EventProjID: string;
+}
+
+export interface ICoinScheduleIcoDetails {
+    ProjID: string;
+    ProjName: string;
+    ProjSymbol: string;
+    ProjDesc: string;
+    ProjType: string;
+    ProjSponsored: string;
+    ProjLocation?: string;
+    ProjAlgo: string;
+    ProjTotalSupp: number;
+    ProjPreMined: number;
+    EventName: string;
+    EventID: string;
+    EventURL: string;
 }
 
 export class CoinSchedule {
