@@ -1,0 +1,34 @@
+{
+  "name": "coinschedule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dublicator/coinschedule.git"
+  },
+  "keywords": [
+    "ico",
+    "coinschedule"
+  ],
+  "author": "Anton Kandybo <dublicator@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dublicator/coinschedule/issues"
+  },
+  "homepage": "https://github.com/dublicator/coinschedule#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "config": "^1.29.2"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.33",
+    "@types/node": "^9.3.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
+  }
+}
