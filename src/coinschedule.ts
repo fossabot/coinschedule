@@ -2,7 +2,30 @@ import axios from "axios";
 
 export interface ICoinScheduleResponse {
     status: number;
-    error: string;
+    errors?: any[];
+    output?: any;
+}
+
+export interface ICoinScheduleDetailsParams {
+    /**
+     * ICO's Project ID
+     */
+    proj_id?: number;
+    /**
+     * ICO's event ID
+     */
+    event_id?: number;
+}
+
+export interface ICoinScheduleFilter {
+    /**
+     * Array of cat filters
+     */
+    cat: string[];
+    /**
+     * Array of plat filters
+     */
+    plat: string[];
 }
 
 export class CoinSchedule {
@@ -21,8 +44,36 @@ export class CoinSchedule {
     /**
      * Returns live ICO's within specified parameters.
      */
-    public async getLive() {
+    public async getLive(params: ICoinScheduleFilter) {
         return await this.request("/getLive");
+    }
+
+    /**
+     * Returns upcoming ICO's within specified parameters.
+     */
+    public async getUpcoming(params: ICoinScheduleFilter) {
+        return await this.request("/getUpcoming");
+    }
+
+    /**
+     * Returns an ICO's details based on parameters.
+     */
+    public async getDetails(params?: ICoinScheduleDetailsParams) {
+        return await this.request("/getDetails");
+    }
+
+    /**
+     * Returns all platform filters.
+     */
+    public async getCategories() {
+        return await this.request("/getCategories");
+    }
+
+    /**
+     * getPlatform
+     */
+    public async getPlatform() {
+        return await this.request("/getPlatform");
     }
 
     private async request(url: string): Promise<ICoinScheduleResponse> {
